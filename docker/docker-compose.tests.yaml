@@ -1,0 +1,13 @@
+name: novalex
+services:
+  api-tests:
+    container_name: novalex-api-tests
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.tests
+    image: novalex-api-tests:latest
+    platform: linux/amd64
+    entrypoint: poetry
+    command:
+      - run
+      - pytest
